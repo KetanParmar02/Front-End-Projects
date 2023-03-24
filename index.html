@@ -28,7 +28,7 @@
             <a href="#" class="company-logo">
                 <img src="images/asset 1.png" alt="company logo">
             </a>
-            <div class="nav-links">
+            <div class="nav-links active" id="nav-links">
                 <ul class="flex">
                     <li><a href="#" class="hover-link">Products</a></li>
                     <li><a href="#" class="hover-link">Customer</a></li>
@@ -38,6 +38,7 @@
                     <li><a href="#" class="hover-link primary-button">Sign up</a></li>
                 </ul>
             </div>
+            <a href="#" class="nav-toggle hover-link" id="nav-toggle"><i class="fa-solid fa-bars"></i></a>
         </div>
     </nav>
     <!-- navbar section ends -->
@@ -88,14 +89,14 @@
                 <div class="features-card flex">
                     <img src="images/asset 11.svg" alt="">
                     <h3>Card Sorting</h3>
-                    <p>Discover how people group and label information.</p>
+                    <p>Discover how people group and label.</p>
                     <a href="#" class="secondary-button">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="features-card flex">
                     <img src="images/asset 13.svg" alt="">
                     <h3>Prototype tests</h3>
-                    <p>Discover how people navigate your Figma prototypes.</p>
+                    <p>Discover how people navigate your Figma.</p>
                     <a href="#" class="secondary-button">Learn more <i class="fas fa-arrow-right"></i></a>
                 </div>
     
@@ -123,7 +124,7 @@
                 <div class="features-card flex">
                     <img src="images/asset 17.svg" alt="">
                     <h3>Five second tests</h3>
-                    <p>Test comprehensibility by measuring first impressions.</p>
+                    <p>Test comprehensibility by measuring first.</p>
                     <a href="#" class="secondary-button">Learn more <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -147,15 +148,15 @@
     </section>
 
     <section class="big-features-section">
-        <div class="container flex big-feature-container">
+        <div id="second-big-feature" class="container flex big-feature-container">
+            <div class="feature-img">
+                <img src="images/asset 21.png" alt="">
+            </div>
+
             <div class="feature-desc flex">
                 <h4>Effortless validation for</h4>
                 <h3>Design professionals</h3>
                 <p>Test interfaces, interaction flows, iconography and more, to help you create intuitive and delightful experiences for your users.</p>
-            </div>
-
-            <div class="feature-img">
-                <img src="images/asset 21.png" alt="">
             </div>
         </div>
     </section>
@@ -272,5 +273,14 @@
 
     <script src="https://kit.fontawesome.com/c1fc3d2826.js" crossorigin="anonymous"></script>
     
+    <script>
+        const togglebutton = document.getElementById('nav-toggle');
+        const navlinks = document.getElementById('nav-links');
+
+        togglebutton.addEventListener('click', () => {
+            navlinks.classList.toggle('active')
+        })
+    </script>
+
 </body>
 </html>

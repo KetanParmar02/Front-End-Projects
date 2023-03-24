@@ -58,6 +58,7 @@ ul{
     max-width: 1180px;
     margin-inline: auto;
     padding-inline: var(--padding-inline-section);
+    overflow: hidden;
 }
 
 .flex{
@@ -84,6 +85,7 @@ ul{
     padding: 12px 24px;
     box-shadow: 0 0 2px var(--secondary-text-color);
     transition: 0.2s ease-out;
+    text-align: center;
 }
 
 .primary-button:hover{
@@ -123,6 +125,7 @@ ul{
 .main-nav{
     justify-content: space-between;
     margin-top: 20px;
+    position: relative;
 }
 
 .company-logo img{
@@ -136,6 +139,11 @@ ul{
 .nav-links ul{
     justify-content: end;
     gap: 40px;
+    padding: 20px;
+}
+
+.nav-toggle{
+    display: none;
 }
 
 /* header section */
@@ -169,7 +177,7 @@ header{
 }
 
 .header-right img{
-    width: 600px;
+    width: 100%;
 }
 
 /* compaines section */
@@ -182,17 +190,18 @@ header{
 
 .logos{
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    gap: 20px;
 }
 
 .logo{
     height: 46px;
 }
 
-/* features section */
+/* feature section */
 
 .features-section{
-    padding: 80px var(--padding-inline-section) 0;
+    padding: 50px var(--padding-inline-section) 0;
     background-image: url(images/asset\ 32.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -201,6 +210,7 @@ header{
 
 .features-header{
     text-align: center;
+    margin-bottom: 40px;
 }
 
 .features-header h2{
@@ -219,24 +229,21 @@ header{
     gap: 20px;
     max-width: 30%;
     text-align: center;
-    border: 3px solid rgba(158, 158, 158, 0.797);
-    border-radius: 10px;
-    padding: 20px 10px;
+    
 }
 
 .features-card img{
     width: 60px;
 }
 
-.features-card:hover{
-    box-shadow: 3px 3px 2px var(--accent-color);
-    transform:scale(1.05);
-}
-
 /* big feature section */
 
 .big-features-section{
     padding: 30px var(--padding-inline-section) 0;
+}
+
+#second-big-feature{
+    flex-direction: row-reverse;
 }
 
 .big-feature-container{
@@ -258,6 +265,10 @@ header{
 }
 
 /* example section */
+.examples-section{
+    padding: 40px var(--padding-inline-section) ;
+}
+
 .examples-header{
     text-align: center;
 }
@@ -265,6 +276,7 @@ header{
 .examples-area{
     justify-content: space-between;
     margin-block: 30px;
+    flex-wrap: wrap;
 }
 
 .examples-header h2{
@@ -323,6 +335,7 @@ header{
     flex-direction: column;
     gap: 35px;
     color: white;
+    text-align: center;
 }
 
 .cta-section{
@@ -364,11 +377,13 @@ footer{
 .subfooter-container{
     justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .copyright{
     justify-content: center;
     /* background-color: #b9cde4; */
+    flex-wrap: wrap;
 }
 
 .copyright p{
@@ -377,4 +392,120 @@ footer{
 
 span{
     color: #2294ed;
+}
+
+@media screen and (max-width: 991px) {
+    h3{
+        font-size: 1.2rem;
+    }
+
+    .nav-toggle{
+        display: block;
+        margin-right: 20px;
+    }
+
+    .main-nav{
+        overflow: initial;
+    }
+
+    .nav-links{
+        position: absolute;
+        left: -100%;
+        top: 100%;
+        width: 100%;
+        padding-block: 20px;
+        transition: 0.2s ease-in-out;
+    }
+
+    .nav-links.active{
+        left: 0;
+        /* border: 2px solid var(--accent-color); */
+        /* border-radius: 8px; */
+    }
+
+    .nav-links ul{
+        flex-direction: column;
+        background-color: white;
+    }
+
+    .examples-area{
+        gap: 20px;
+    }
+
+    .examples-card{
+        width: 48%;
+        height: 180px;
+    }
+
+    .cta-section{
+        padding-block: 80px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .primary-button{
+        width: 100%;
+    }
+
+    .header-section{
+        flex-direction: column-reverse;
+    }
+
+    .header-left{
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .features-card{
+        /* width: calc(50%-10px); */
+        min-width: 46%;
+    }
+
+    .examples-card{
+        width: 47%;
+    }
+
+    .big-feature-container, #second-big-feature{
+        flex-direction: column;
+    }
+
+    .footer-container{
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .link-column{
+        align-items: stretch;
+    }
+}
+
+@media screen and (max-width:479px) {
+    :root{
+        --padding-inline-section: 10px;
+    }
+
+    h1{
+        font-size: 2rem;
+    }
+    
+    h2{
+        font-size: 1.5rem;
+    }
+    
+    h3{
+        font-size: 1.2rem;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+
+    .features-card{
+        width: 100%;
+    }
+
+    .examples-card{
+        width: 100%;
+    }
 }
